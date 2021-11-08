@@ -1,4 +1,4 @@
-﻿namespace Lab4_Nasledovanie
+namespace Lab4_Nasledovanie
 {
     partial class Form1
     {
@@ -33,6 +33,7 @@
             this.txtInfo = new System.Windows.Forms.RichTextBox();
             this.txtOut = new System.Windows.Forms.RichTextBox();
             this.btnGet = new System.Windows.Forms.Button();
+            this.rtbqueue = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnRefill
@@ -70,20 +71,31 @@
             // btnGet
             // 
             this.btnGet.BackColor = System.Drawing.Color.Pink;
-            this.btnGet.Location = new System.Drawing.Point(285, 125);
+            this.btnGet.Location = new System.Drawing.Point(272, 125);
             this.btnGet.Name = "btnGet";
-            this.btnGet.Size = new System.Drawing.Size(114, 181);
+            this.btnGet.Size = new System.Drawing.Size(127, 181);
             this.btnGet.TabIndex = 3;
             this.btnGet.Text = "Взять";
             this.btnGet.UseVisualStyleBackColor = false;
             this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
+            // 
+            // rtbqueue
+            // 
+            this.rtbqueue.BackColor = System.Drawing.Color.Lavender;
+            this.rtbqueue.Location = new System.Drawing.Point(405, 12);
+            this.rtbqueue.Name = "rtbqueue";
+            this.rtbqueue.ReadOnly = true;
+            this.rtbqueue.Size = new System.Drawing.Size(80, 294);
+            this.rtbqueue.TabIndex = 4;
+            this.rtbqueue.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(411, 318);
+            this.ClientSize = new System.Drawing.Size(495, 318);
+            this.Controls.Add(this.rtbqueue);
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.txtOut);
             this.Controls.Add(this.txtInfo);
@@ -103,6 +115,7 @@
         private System.Windows.Forms.RichTextBox txtInfo;
         private System.Windows.Forms.RichTextBox txtOut;
         private System.Windows.Forms.Button btnGet;
+        private System.Windows.Forms.RichTextBox rtbqueue;
     }
 }
 
