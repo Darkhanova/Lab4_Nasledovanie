@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +13,6 @@ namespace Lab4_Nasledovanie
     public partial class Form1 : Form
     {
         List<Pets> petslist = new List<Pets>();
-
 
         public Form1()
         {
@@ -59,6 +58,23 @@ namespace Lab4_Nasledovanie
                         break; 
                 }
             }
+            
+            rtbqueue.Text = "След.\n";
+            for(int i = 0; i < petslist.Count; i++)
+            {
+                if (Convert.ToString(petslist.ElementAt(i)) == "Lab4_Nasledovanie.Dog")
+                {
+                    rtbqueue.Text += "Собака\n";
+                }
+                else if (Convert.ToString(petslist.ElementAt(i)) == "Lab4_Nasledovanie.Cow")
+                {
+                    rtbqueue.Text += "Корова\n";
+                }
+                else if (Convert.ToString(petslist.ElementAt(i)) == "Lab4_Nasledovanie.Cat")
+                {
+                    rtbqueue.Text += "Кошка\n";
+                }
+            }
             ShowInfo();
         }
 
@@ -68,7 +84,6 @@ namespace Lab4_Nasledovanie
             int dogCount = 0;
             int catCount = 0;
 
-            
             foreach (var pet in this.petslist)
             {
                 
@@ -85,7 +100,6 @@ namespace Lab4_Nasledovanie
                     catCount += 1;
                 }
             }
-
             
             txtInfo.Text = "Коровы\tСобаки\tКошки"; 
             txtInfo.Text += "\n";
@@ -99,23 +113,29 @@ namespace Lab4_Nasledovanie
                 txtOut.Text = "Пусто ^_^";
                 return;
             }
-
-            
+        
             var pet = this.petslist[0];
-            
+
+            rtbqueue.Text = "След.\n";
+            for (int i = 1; i < petslist.Count; i++)
+            {
+                if (Convert.ToString(petslist.ElementAt(i)) == "Lab4_Nasledovanie.Dog")
+                {
+                    rtbqueue.Text += "Собака\n";
+                }
+                else if (Convert.ToString(petslist.ElementAt(i)) == "Lab4_Nasledovanie.Cow")
+                {
+                    rtbqueue.Text += "Корова\n";
+                }
+                else if (Convert.ToString(petslist.ElementAt(i)) == "Lab4_Nasledovanie.Cat")
+                {
+                    rtbqueue.Text += "Кошка\n";
+                }
+            }
             this.petslist.RemoveAt(0);
             txtOut.Text = pet.GetInfo();
             ShowInfo();
-
         }
-
-
-
     }
-
-
-
-
-
 }
 
